@@ -2,6 +2,8 @@ package homework.McDonalds;
 
 import java.util.concurrent.Semaphore;
 
+import static homework.McDonalds.McDonaldsMain.BARRIER;
+
 public class HungryCustomer implements Runnable {
 
     private Semaphore semaphore;
@@ -19,6 +21,8 @@ public class HungryCustomer implements Runnable {
     @Override
     public void run() {
         try {
+            System.out.println(name + " awaits for the free cashdesk...");
+            BARRIER.await();
             semaphore.acquire();
         } catch (InterruptedException e) {
             e.printStackTrace();

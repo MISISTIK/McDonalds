@@ -2,10 +2,10 @@ package homework.McDonalds;
 
 public class Cashdesk {
 
-    volatile boolean closed = false;
+    volatile boolean closed;
 
     public Cashdesk() {
-        vilnaKassa();
+        this.closed = false;
     }
 
     String getFood() {
