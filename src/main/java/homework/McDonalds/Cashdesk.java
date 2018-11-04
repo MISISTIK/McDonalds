@@ -8,7 +8,7 @@ public class Cashdesk {
         this.closed = false;
     }
 
-    String getFood() {
+    synchronized String getFood() {
         Double rand = Math.random();
         if (rand > 0.7) {
             closed = true;
